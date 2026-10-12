@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thiệp mời sinh nhật 1 tuổi - Châu Anh</title>
+  <meta name="description" content="Thiệp mời sinh nhật 1 tuổi của bé Châu Anh - Cốm" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- =========================
+       MÀN HÌNH MỞ ĐẦU
+  ========================== -->
+  <div id="introScreen" class="intro-screen">
+    <div class="intro-decor decor-heart heart-1">❤</div>
+    <div class="intro-decor decor-heart heart-2">❤</div>
+    <div class="intro-decor decor-star star-1">✦</div>
+    <div class="intro-decor decor-star star-2">✦</div>
+    <div class="intro-decor decor-butterfly butterfly-1">🦋</div>
+    <div class="intro-decor decor-butterfly butterfly-2">🦋</div>
+
+    <div class="intro-card">
+      <p class="intro-subtitle">Thiệp mời sinh nhật</p>
+      <h1 class="intro-title">Châu Anh - Cốm</h1>
+      <p class="intro-text">Gia đình trân trọng gửi lời mời đến bạn tham dự tiệc sinh nhật 1 tuổi của bé.</p>
+      <button id="openCardBtn" class="open-btn">💌 MỞ THIỆP</button>
+    </div>
+  </div>
+
+  <!-- =========================
+       NÚT NHẠC
+  ========================== -->
+  <button id="musicToggle" class="music-toggle hidden" aria-label="Bật tắt nhạc">
+    🔊
+  </button>
+
+  <!-- =========================
+       NHẠC NỀN
+       Thay file tại: audio/music.mp3
+  ========================== -->
+  <audio id="bgMusic" loop>
+    <source src="audio/music.mp3" type="audio/mpeg" />
+    Trình duyệt của bạn không hỗ trợ audio.
+  </audio>
+
+  <!-- =========================
+       NỘI DUNG THIỆP
+  ========================== -->
+  <main id="mainCard" class="main-card hidden">
+    <!-- lớp nền trang trí -->
+    <div class="floating-icons">
+      <span class="float-item item-1">❤</span>
+      <span class="float-item item-2">✦</span>
+      <span class="float-item item-3">🦋</span>
+      <span class="float-item item-4">❤</span>
+      <span class="float-item item-5">✦</span>
+      <span class="float-item item-6">🎈</span>
+    </div>
+
+    <section class="hero-section container fade-up">
+      <div class="hero-top-badge">Happy 1st Birthday</div>
+
+      <h2 class="hero-heading">CHÂU ANH</h2>
+      <p class="hero-nickname">Cốm tròn 1 tuổi</p>
+
+      <!-- Ảnh chính em bé -->
+      <div class="baby-photo-frame">
+        <!--
+          THAY ẢNH CHÍNH TẠI:
+          images/baby-main.jpg
+
+          Nếu chưa có ảnh, phần placeholder bên dưới vẫn hiển thị.
+          Khi đã có ảnh thật, chỉ cần thay file đúng tên là được.
+        -->
+        <img
+          src="images/baby-main.jpg"
+          alt="Ảnh em bé Châu Anh"
+          class="baby-main-photo"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        />
+        <div class="baby-photo-placeholder">
+          ẢNH BÉ
+        </div>
+      </div>
+
+      <div class="invitation-card">
+        <p class="main-title">HAPPY 1ST BIRTHDAY</p>
+        <h1 class="baby-name">Châu Anh</h1>
+        <p class="baby-subname">Cốm</p>
+
+        <p class="invite-message">
+          Ba Mẹ thân mời bạn đến chung vui<br />
+          trong bữa tiệc sinh nhật đầu đời của bé.
+        </p>
+
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-icon">📅</span>
+            <span>17/10/2026</span>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">⏰</span>
+            <span>18h</span>
+          </div>
+          <div class="info-item">
+            <span class="info-icon">📍</span>
+            <span>Nhà của Cốm</span>
+          </div>
+        </div>
+
+        <p class="family-message">
+          Gia đình thân mời cô/chú/anh/chị và các bạn đến chung vui trong buổi tiệc sinh nhật 1 tuổi của bé Châu Anh – Cốm.
+          Sự hiện diện của mọi người sẽ là món quà thật ý nghĩa dành cho bé và gia đình.
+        </p>
+
+        <p class="ending-line">
+          Rất mong được đón tiếp mọi người trong ngày đặc biệt của Cốm 💗
+        </p>
+
+        <button id="mapBtn" class="primary-btn">📍 XEM ĐỊA ĐIỂM TỔ CHỨC</button>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section container fade-up">
+      <div class="section-box">
+        <p class="section-mini-title">Đếm ngược</p>
+        <h3 class="section-title">CÒN BAO LÂU NỮA ĐẾN SINH NHẬT CỐM?</h3>
+
+        <div class="countdown-grid">
+          <div class="count-box">
+            <span id="days">00</span>
+            <small>Ngày</small>
+          </div>
+          <div class="count-box">
+            <span id="hours">00</span>
+            <small>Giờ</small>
+          </div>
+          <div class="count-box">
+            <span id="minutes">00</span>
+            <small>Phút</small>
+          </div>
+          <div class="count-box">
+            <span id="seconds">00</span>
+            <small>Giây</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALBUM -->
+    <section class="album-section container fade-up">
+      <div class="section-box">
+        <p class="section-mini-title">Album nhỏ xinh</p>
+        <h3 class="section-title">💗 Những khoảnh khắc đáng yêu của Cốm</h3>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/baby1.jpg" alt="Ảnh album 1" class="gallery-photo" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/baby2.jpg" alt="Ảnh album 2" class="gallery-photo" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/baby3.jpg" alt="Ảnh album 3" class="gallery-photo" />
+          </div>
+          <div class="gallery-item">
+            <img src="images/baby4.jpg" alt="Ảnh album 4" class="gallery-photo" />
+          </div>
+        </div>
+
+        <p class="gallery-note">
+          Chạm vào ảnh để phóng to ✨
+        </p>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="rsvp-section container fade-up">
+      <div class="section-box">
+        <p class="section-mini-title">Xác nhận tham dự</p>
+        <h3 class="section-title">Bạn sẽ đến chung vui cùng Cốm chứ?</h3>
+
+        <div class="rsvp-buttons">
+          <button id="attendBtn" class="primary-btn">💗 Mình sẽ đến</button>
+          <button id="wishBtn" class="secondary-btn">🥰 Gửi lời chúc cho bé</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer fade-up">
+      <p>With love for Cốm 💕</p>
+    </footer>
+  </main>
+
+  <!-- =========================
+       LIGHTBOX XEM ẢNH LỚN
+  ========================== -->
+  <div id="lightbox" class="lightbox hidden">
+    <button id="closeLightbox" class="lightbox-close">×</button>
+    <img id="lightboxImg" src="" alt="Ảnh phóng to" class="lightbox-img" />
+  </div>
+
+  <!-- =========================
+       TOAST THÔNG BÁO
+  ========================== -->
+  <div id="toast" class="toast">Cảm ơn bạn 💗</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
