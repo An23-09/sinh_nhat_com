@@ -187,7 +187,7 @@ wishBtn.addEventListener("click", () => {
   if (navigator.clipboard) {
     navigator.clipboard.writeText(wishMessage)
       .then(() => {
-        showToast("Đã sao chép lời chúc cho bé 🥰");
+        showToast("Đã gửi lời chúc cho Cốm 🥰");
       })
       .catch(() => {
         showToast(wishMessage);
